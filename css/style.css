@@ -1,0 +1,408 @@
+/* -----------------------
+Header
+----------------------- */
+
+.header {
+    position: relative;
+    border-bottom: 1px solid var(--cline);
+}
+
+.header .head_top {
+    border-bottom: 1px solid var(--cline);
+}
+
+.header .head_top .inner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header .head_top .user_area {
+    display: flex;
+    gap: 30px;
+}
+
+.header .head_top .user_area li {
+    position: relative;
+}
+
+.header .head_top .user_area li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 1px;
+    height: 100%;
+    background: var(--cline);
+}
+
+.header .head_top .user_area li a {
+    display: block;
+    font-size: 14px;
+    line-height: 31px;
+}
+
+.header .head_wrap {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 77px;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 24px;
+}
+
+.header .gnb>ul>li>a {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 77px;
+    padding: 0 8px;
+}
+
+.header .gnb .sub {
+    display: none;
+}
+
+.header .head_wrap .head_customer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header .head_wrap .head_customer a {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 77px;
+}
+
+.header .head_wrap .head_customer a span {
+    display: block;
+    font-size: 30px;
+    line-height: 77px;
+
+}
+
+
+
+/* -----------------
+main
+------------------ */
+
+.main_visual {
+    padding: 24px 0 0 0;
+    position: relative;
+}
+
+.main_visual .main_slide {
+    margin: 0 auto 24px auto;
+    max-width: 1440px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.main_visual .main_slide .itm {
+    position: relative;
+    height: 500px;
+}
+
+.main_visual .main_slide .itm01 {
+    background: url(../images/main_visual01.jpg) no-repeat center 40%/cover;
+}
+
+.main_visual .main_slide .itm02 {
+    background: url(../images/main_visual02.jpg) no-repeat right center/cover;
+}
+
+.main_visual .main_slide .itm03 {
+    background: url(../images/main_visual03.jpg) no-repeat center 40%/cover;
+}
+
+.main_visual .main_slide .itm .slogan {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translate(0, -50%);
+    padding: 24px 32px;
+    width: 350px;
+    border-radius: 8px;
+    background: var(--cw);
+}
+
+.main_visual .main_slide .itm03 .slogan {
+    right: auto;
+    left: 100px;
+}
+
+.main_visual .notice {
+    position: relative;
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main_visual .notice .notice_wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid var(--cline);
+    background: var(--cwb);
+}
+
+.main_visual .notice h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--main);
+}
+
+.main_visual .notice_slide {
+    width: 80%;
+    background: var(--cw);
+    padding: 10px 16px 8px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--cline);
+}
+
+.main_visual .notice_slide .notice_list a {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_visual .notice_slide .notice_list p {
+    font-weight: 500;
+}
+
+.main_visual .notice_slide .notice_list span {
+    display: inline-block;
+    color: var(--c6);
+    font-weight: 300;
+}
+
+.main_visual .notice .more {
+    color: var(--main);
+}
+
+.main_visual .notice .more span {
+    position: relative;
+    font-weight: 500;
+    user-select: none;
+    cursor: pointer;
+}
+
+.main_visual .notice .more span::before {
+    content: "\e145";
+    font-family: "material symbols outlined";
+    display: inline-block;
+    vertical-align: -2px;
+}
+
+.main_visual .notice .notice_arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_visual .notice .notice_arrow span {
+    color: var(--c9);
+    background: var(--cw);
+    padding: 5px;
+    border: 1px solid var(--cline);
+    user-select: none;
+    cursor: pointer;
+}
+
+.main_visual .notice .notice_arrow .prev span {
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------
+Footer
+----------------------- */
+.footer {
+    background: var(--c4);
+}
+
+.footer .foot_wrap {
+    padding: 50px 15px 60px 15px;
+}
+
+.footer .ft {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 64px 0;
+}
+
+.footer .ft::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+    width: 100%;
+    height: 1px;
+    background: var(--c6);
+}
+
+.footer .foot_customer {
+    display: flex;
+    gap: 32px;
+}
+
+.footer .foot_customer li a {
+    display: block;
+    color: var(--cline);
+    font-weight: 300;
+}
+
+.footer .foot_customer li .strong {
+    font-weight: 600;
+    color: var(--sub);
+}
+
+.footer .foot_family {
+    cursor: pointer;
+}
+
+.footer .foot_family span {
+    position: relative;
+    display: block;
+    padding: 9px 22px 8px 31px;
+    border: 1px solid var(--c9);
+
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--cline);
+    user-select: none;
+}
+
+.footer .foot_family span::after {
+    content: "\e5ce";
+    font-family: "material symbols outlined";
+    font-size: 16px;
+    vertical-align: -3.5px;
+    color: var(--sub);
+}
+
+.footer .foot_family ul {
+    display: none;
+}
+
+
+.footer .addr li {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--cline);
+}
+
+.footer .addr li .tel {
+    display: inline-block;
+    color: var(--sub);
+}
+
+.footer .copy {
+    font-size: 14px;
+    color: var(--c9);
+}
+
+
+.quick_menu {
+    position: sticky;
+    bottom: 0;
+    background: var(--c3);
+}
+
+.quick_menu .inner {
+    display: flex;
+    align-items: center;
+}
+
+.quick_menu .inner li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.quick_menu .inner li~li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--c4);
+}
+
+.quick_menu .inner li a,
+.quick_menu .inner li span {
+    display: block;
+    padding: 20px;
+    color: var(--cg);
+}
+
+.quick_menu .inner li span {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--cw);
+    background: var(--c2);
+    user-select: none;
+}
+
+.side {
+    position: fixed;
+    top: 50%;
+    left: 30px;
+    transform: translate(0, -50%);
+}
