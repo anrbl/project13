@@ -491,11 +491,15 @@
             <!-- mM : 인천 세종병원으로 오시는 길 -->
             <section class="main_map sec">
                 <div class="inner content">
-                    <div class="text_box">
+                    <div class="map_left">
                         <div class="title">
-                            <h3>오시는 길</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <h3>찾아가는 길</h3>
+                            <p>인천 계양구 계양문화로 20 (21080)</p>
                         </div>
+                        <ul class="location">
+                            <li><a href="">위치 안내</a></li>
+                            <li><a href="">주차장 안내</a></li>
+                        </ul>
                     </div>
                     <div class="map" id="map" style="width: 100%;height: 400px;">
                         <script type="text/javascript"
@@ -514,6 +518,7 @@
                 <li><a href="">채용안내</a></li>
                 <li><a href="">건강상담</a></li>
                 <li><a href="">오시는길</a></li>
+                <li class="to_top"><span>TOP</span></li>
             </ul>
         </div>
         <footer class="footer">
@@ -569,7 +574,7 @@
         var container = document.getElementById('map');
         var options = {
             center: new kakao.maps.LatLng(37.53257409719912, 126.7367517389714),
-            level: 3,
+            level: 5,
         };
         var map = new kakao.maps.Map(container, options);
     </script>

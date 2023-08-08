@@ -510,12 +510,109 @@ main_map
     position: relative;
 }
 
-.main_map .map {
-    width: 100%;
-    height: 300px;
+.main_map .content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+}
+
+.main_map .title {
+    margin: 0 0 48px 0;
+}
+
+.main_map .location a {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    color: var(--c6);
+    background: var(--cw);
+    border: 1px solid var(--cline);
+}
+
+.main_map .location li:first-child {
+    margin: 0 0 4px 0;
+}
+
+.main_map .location a::after {
+    content: "\e409";
+    font-family: "material symbols outlined";
+    vertical-align: -2px;
+    color: var(--main);
 }
 
 
+
+
+/* -----------------------
+quick
+----------------------- */
+
+.quick_menu {
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    background: var(--c3);
+}
+
+.quick_menu .inner {
+    display: flex;
+    align-items: center;
+}
+
+.quick_menu .inner li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.quick_menu .inner li~li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--c4);
+}
+
+.quick_menu .inner li a,
+.quick_menu .inner li span {
+    display: block;
+    padding: 20px;
+    color: var(--cg);
+}
+
+.quick_menu .inner li span {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--cw);
+    background: var(--c2);
+    user-select: none;
+}
+
+.quick_menu .inner .to_top {
+    position: absolute;
+    top: 0;
+    right: 0px;
+
+}
+
+.quick_menu .inner .to_top span {
+    width: 58px;
+    height: 58px;
+    font-size: 15px;
+    line-height: 58px;
+    letter-spacing: 0px;
+    text-align: center;
+    background: var(--main);
+    padding: 0;
+}
+
+.quick_menu .inner .to_top::after {
+    display: none;
+}
 
 
 
@@ -526,6 +623,8 @@ Footer
 .footer {
     background: var(--c4);
 }
+
+
 
 .footer .foot_wrap {
     padding: 50px 15px 60px 15px;
@@ -614,49 +713,12 @@ Footer
 }
 
 
-.quick_menu {
-    position: sticky;
-    bottom: 0;
-    z-index: 999;
-    background: var(--c3);
-}
 
-.quick_menu .inner {
-    display: flex;
-    align-items: center;
-}
 
-.quick_menu .inner li {
-    position: relative;
-    flex: 1;
-    text-align: center;
-}
 
-.quick_menu .inner li~li::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 100%;
-    background: var(--c4);
-}
 
-.quick_menu .inner li a,
-.quick_menu .inner li span {
-    display: block;
-    padding: 20px;
-    color: var(--cg);
-}
 
-.quick_menu .inner li span {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--cw);
-    background: var(--c2);
-    user-select: none;
-}
+
 
 .side {
     position: fixed;
