@@ -310,24 +310,6 @@ main
     font-weight: 300;
 }
 
-.main_visual .notice .more {
-    color: var(--main);
-}
-
-.main_visual .notice .more span {
-    position: relative;
-    font-weight: 500;
-    user-select: none;
-    cursor: pointer;
-}
-
-.main_visual .notice .more span::before {
-    content: "\e145";
-    font-family: "material symbols outlined";
-    display: inline-block;
-    vertical-align: -2px;
-}
-
 .main_visual .notice .notice_arrow {
     display: flex;
     flex-direction: column;
@@ -365,14 +347,6 @@ main doctor
 
 .main_doctor .title h3 {
     margin: 0 0 24px 0;
-}
-
-.main_doctor .title .btn {
-    display: inline-block;
-    font-size: 15px;
-    color: var(--main);
-    padding: 8px 24px 7px 24px;
-    border: 1px solid var(--main);
 }
 
 
@@ -486,13 +460,180 @@ main doctor
 
 
 
+/* -----------------------
+main_service
+----------------------- */
+.main_service {
+    background: var(--cwb);
+}
+
+.main_service .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.main_service .tit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_service .tit h3 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    color: var(--c3);
+}
+
+.main_service .tit h3::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 0 4px;
+    background: var(--sub);
+    opacity: 60%;
+    vertical-align: 2px;
+    margin: 0 8px 0 0;
+}
+
+.main_service .tit .more span {
+    font-size: 14px;
+}
 
 
+.main_service .sejong_service {
+    padding: 32px;
+    background: var(--cw);
+    border-radius: 8px;
+    border: 1px solid var(--cline);
+}
+
+.main_service .sejong_service .serv_list li a {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    color: var(--c6);
+    background: var(--cw);
+    border: 1px solid var(--cline);
+}
+
+.main_service .sejong_service .serv_list li:not(:last-child) {
+    margin: 0 0 4px 0;
+}
+
+.main_service .sejong_service .serv_list a::after {
+    content: "\e409";
+    font-family: "material symbols outlined";
+    vertical-align: -2px;
+    color: var(--main);
+}
 
 
+.main_service .sejong_smart {
+    padding: 32px;
+    background: var(--cw);
+    border-radius: 8px;
+    border: 1px solid var(--cline);
+}
+
+.main_service .sejong_smart h3 {
+    margin: 0;
+}
+
+.main_service .sejong_smart .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main_service .sejong_smart .desc span {
+    display: block;
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
+.main_service .sejong_newsbox {
+    padding: 32px;
+    background: var(--cw);
+    border-radius: 8px;
+    border: 1px solid var(--cline);
+}
+
+.main_service .sejong_newsbox h4 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.main_service .sejong_newsbox .se_news {
+    position: relative;
+    margin: 0 0 40px 0;
+}
+
+.main_service .sejong_newsbox .se_news h4 {
+    margin: 0 0 8px 0;
+}
 
 
+.main_service .sejong_newsbox .se_news li~li {
+    border-top: 1px solid var(--cline);
+}
 
+.main_service .sejong_newsbox .se_news::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--cline);
+}
+
+.main_service .sejong_newsbox .se_news a {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 40px;
+
+    width: 290px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+
+.main_service .sejong_newsbox .se_news a::before {
+    content: "-";
+    display: inline-block;
+    font-size: 12px;
+
+}
+
+.main_service .sejong_newsbox .se_news strong {
+    font-weight: 700;
+    color: var(--sub);
+    margin: 0 4px 0 0;
+}
+
+.main_service .sejong_newsbox .se_employment {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.main_service .sejong_newsbox .se_employment a {
+    display: block;
+    font-size: 14px;
+    color: var(--main);
+    padding: 8px 22px;
+    border: 1px solid var(--cline);
+}
 
 
 
@@ -516,11 +657,37 @@ main_map
     gap: 30px;
 }
 
-.main_map .title {
-    margin: 0 0 48px 0;
+.main_map .map_left {
+    display: flex;
+    flex-direction: column;
 }
 
-.main_map .location a {
+.main_map .title {
+    margin: 0 0 auto 0;
+}
+
+.main_map .call {
+    padding: 20px;
+    border: 1px solid var(--cline);
+    margin: 0 0 8px 0;
+    width: 100%;
+    text-align: center
+}
+
+.main_map .call span {
+    font-size: 14px;
+}
+
+.main_map .call strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--main);
+    margin: 0 0 8px 0;
+}
+
+
+.main_map .location li a {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -541,6 +708,10 @@ main_map
     color: var(--main);
 }
 
+
+.main_map .map {
+    border: 1px solid var(--cline);
+}
 
 
 
