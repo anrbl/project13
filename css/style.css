@@ -3,7 +3,10 @@ Header
 ----------------------- */
 
 .header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--cw);
     border-bottom: 1px solid var(--cline);
 }
 
@@ -38,14 +41,11 @@ Header
 .header .head_top .user_area li a {
     display: block;
     font-size: 14px;
-    line-height: 31px;
+    line-height: 29px;
+    color: var(--c6);
 }
 
 .header .head_wrap {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +61,7 @@ Header
     display: block;
     font-size: 18px;
     font-weight: 600;
-    line-height: 77px;
+    line-height: 79px;
     padding: 0 8px;
 }
 
@@ -79,13 +79,13 @@ Header
     display: block;
     font-size: 15px;
     font-weight: 500;
-    line-height: 77px;
+    line-height: 79px;
 }
 
 .header .head_wrap .head_customer a span {
     display: block;
     font-size: 30px;
-    line-height: 77px;
+    line-height: 79px;
 
 }
 
@@ -100,20 +100,26 @@ main
     position: relative;
 }
 
-.main_visual .main_slide {
+.main_visual .content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 16px;
     margin: 0 auto 24px auto;
-    max-width: 1440px;
-    border-radius: 16px;
+    max-width: 1600px;
+}
+
+.main_visual .main_slide {
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .main_visual .main_slide .itm {
     position: relative;
-    height: 500px;
+    height: 450px;
 }
 
 .main_visual .main_slide .itm01 {
-    background: url(../images/main_visual01.jpg) no-repeat center 40%/cover;
+    background: url(../images/main_visual01.jpg) no-repeat right 40%/cover;
 }
 
 .main_visual .main_slide .itm02 {
@@ -124,35 +130,153 @@ main
     background: url(../images/main_visual03.jpg) no-repeat center 40%/cover;
 }
 
+.main_visual .main_slide .itm::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.main_visual .main_slide .itm03::before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
 .main_visual .main_slide .itm .slogan {
     position: absolute;
     top: 50%;
     right: 100px;
     transform: translate(0, -50%);
-    padding: 24px 32px;
-    width: 350px;
-    border-radius: 8px;
-    background: var(--cw);
+    text-align: right;
+    color: var(--cw);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .main_visual .main_slide .itm03 .slogan {
     right: auto;
     left: 100px;
+    text-align: left;
 }
 
+.main_visual .slogan strong {
+    display: block;
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+}
+
+.main_visual .slogan p {
+    color: var(--cwb);
+    margin: 0 0 24px 0;
+}
+
+/* hospital_reservation ----------- */
+
+.main_visual .hospital_reservation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 40px 30px 32px 30px;
+    background: var(--cwb);
+    border-radius: 12px;
+    border: 1px solid var(--cline);
+}
+
+.hospital_reservation legend {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.hospital_reservation .txt {
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--c6);
+    margin: 0 0 32px 0;
+}
+
+.hospital_reservation .num {
+    display: flex;
+    gap: 4px;
+    margin: 0 0 16px 0;
+}
+
+.hospital_reservation .num input {
+    border: 1px solid var(--cline);
+    outline: none;
+    padding: 8px 24px 8px 12px;
+    color: var(--c2);
+    border-radius: 4px;
+}
+
+.hospital_reservation .num input::placeholder {
+    color: var(--c9);
+}
+
+.hospital_reservation button {
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    border-radius: 4px;
+    background: var(--main);
+    color: var(--cline);
+    cursor: pointer;
+}
+
+.hospital_reservation .agree input {
+    vertical-align: -2px;
+}
+
+.hospital_reservation .agree label {
+    font-size: 14px;
+}
+
+.hospital_reservation .agree span a {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 20px;
+    text-decoration: underline;
+    text-align: right;
+    text-indent: 4px;
+
+}
+
+.hospital_reservation .reservation_link a {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    color: var(--c6);
+    background: var(--cw);
+    border: 1px solid var(--cline);
+}
+
+.hospital_reservation .reservation_link li:first-child {
+    margin: 0 0 4px 0;
+}
+
+.hospital_reservation .reservation_link a::after {
+    content: "\e409";
+    font-family: "material symbols outlined";
+    vertical-align: -2px;
+    color: var(--main);
+}
+
+/* notice_slide ------------ */
 .main_visual .notice {
     position: relative;
     display: flex;
-    max-width: 1440px;
     width: 100%;
-    margin: 0 auto;
 }
 
 .main_visual .notice .notice_wrap {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 16px;
+    padding: 4px 16px;
     border: 1px solid var(--cline);
     background: var(--cwb);
 }
@@ -166,7 +290,7 @@ main
 .main_visual .notice_slide {
     width: 80%;
     background: var(--cw);
-    padding: 10px 16px 8px 16px;
+    padding: 9px 16px 8px 16px;
     border-radius: 4px;
     border: 1px solid var(--cline);
 }
@@ -213,7 +337,7 @@ main
 .main_visual .notice .notice_arrow span {
     color: var(--c9);
     background: var(--cw);
-    padding: 5px;
+    padding: 4px;
     border: 1px solid var(--cline);
     user-select: none;
     cursor: pointer;
@@ -227,6 +351,137 @@ main
 
 
 
+/* -----------------------
+main doctor
+----------------------- */
+
+.main_doctor .content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+}
+
+/* 좌측 */
+
+.main_doctor .title h3 {
+    margin: 0 0 24px 0;
+}
+
+.main_doctor .title .btn {
+    display: inline-block;
+    font-size: 15px;
+    color: var(--main);
+    padding: 8px 24px 7px 24px;
+    border: 1px solid var(--main);
+}
+
+
+/* 우측 */
+.main_doctor .doc_search {
+    padding: 8px 8px 8px 24px;
+    border-radius: 4px;
+    background: var(--cwb);
+    margin: 0 0 24px 0;
+}
+
+.main_doctor form {
+    display: flex;
+    align-items: center;
+}
+
+.main_doctor form label {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--main);
+}
+
+.main_doctor form input[type="text"] {
+    outline: none;
+    border: 1px solid var(--cline);
+    width: 60%;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin: 0 0 0 auto;
+}
+
+.main_doctor form button {
+    outline: none;
+    border: 1px solid var(--cline);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 0 0 0 8px;
+    cursor: pointer;
+    background: var(--cw);
+}
+
+.main_doctor form button span {
+    vertical-align: middle;
+    color: var(--main);
+}
+
+.main_doctor .doc_title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 0 0 24px 0;
+    padding: 0 32px;
+}
+
+.main_doctor .doc_title li {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 16px 13px 16px;
+    color: var(--main);
+    border: 1px solid rgba(0, 71, 143, 0.3);
+    border-radius: 999px;
+    transition: 0.5s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.main_doctor .doc_title li.on {
+    background: var(--main);
+    color: var(--cwb);
+}
+
+.main_doctor .doc_center {
+    height: 340px;
+}
+
+.main_doctor .doc_center>li {
+    display: none;
+}
+
+.main_doctor .doc_center>li.on {
+    display: block;
+}
+
+.main_doctor .doc_center>li.on .list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.main_doctor .doc_center>li.on .list a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    padding: 16px 16px;
+    background: var(--cwb);
+    color: var(--c3);
+    border: 1px solid var(--cline);
+    transition: 0.3s;
+}
+
+.main_doctor .doc_center>li.on .list a:hover {
+    color: var(--sub);
+    background: var(--cw);
+}
 
 
 
@@ -248,15 +503,17 @@ main
 
 
 
+/* -----------------------
+main_map
+----------------------- */
+.main_map {
+    position: relative;
+}
 
-
-
-
-
-
-
-
-
+.main_map .map {
+    width: 100%;
+    height: 300px;
+}
 
 
 
@@ -360,6 +617,7 @@ Footer
 .quick_menu {
     position: sticky;
     bottom: 0;
+    z-index: 999;
     background: var(--c3);
 }
 

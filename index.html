@@ -12,6 +12,10 @@
 
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/slick.min.js"></script>
+    <script type="text/javascript"
+        src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=b632fcb969692531960e641a3bd9beea"></script>
+    <script type="text/javascript"
+        src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
     <script src="./js/custom.js?ver=1.0"></script>
 </head>
 
@@ -281,32 +285,60 @@
             </div>
         </header>
         <main role="main">
-            <!-- 01 mV : 슬라이드쇼 -->
+            <!-- 01 mV : 메인 슬라이드 + 빠른예약 + 공지슬라이드 -->
             <section class="main_visual">
-                <div class="main_slide">
-                    <div class="itm itm01">
-                        <div class="slogan">
-                            <strong>Best</strong>
-                            <p>People · Place · Quality</p>
-                            <span>5대 특성화센터 운영 [심장혈관, 뇌혈관, 소화기, 소아청소년, 척추관절]</span>
+                <div class="content">
+                    <div class="main_slide">
+                        <div class="itm itm01">
+                            <div class="slogan">
+                                <strong>Best</strong>
+                                <p>People · Place · Quality</p>
+                                <span>5대 특성화센터 운영 [심장혈관, 뇌혈관, 소화기, 소아청소년, 척추관절]</span>
+                            </div>
+                        </div>
+                        <div class="itm itm02">
+                            <div class="slogan">
+                                <strong>Fast</strong>
+                                <p>Treatment · Recovery · Process</p>
+                                <span>최상의 진료를 빠르고 편리하게 누릴 수 있습니다.</span>
+                            </div>
+                        </div>
+                        <div class="itm itm03">
+                            <div class="slogan">
+                                <strong>Trust</strong>
+                                <p>from Brand · Love · Cost</p>
+                                <span>고객이 신뢰하고 사랑하는 브랜드, 인천세종병원</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="itm itm02">
-                        <div class="slogan">
-                            <strong>Fast</strong>
-                            <p>Treatment · Recovery · Process</p>
-                            <span>최상의 진료를 빠르고 편리하게 누릴 수 있습니다.</span>
-                        </div>
-                    </div>
-                    <div class="itm itm03">
-                        <div class="slogan">
-                            <strong>Trust</strong>
-                            <p>from Brand · Love · Cost</p>
-                            <span>고객이 신뢰하고 사랑하는 브랜드, 인천세종병원</span>
-                        </div>
+                    <div class="hospital_reservation">
+                        <form action="f" method="get">
+                            <fieldset>
+                                <legend>첫 방문 빠른예약</legend>
+                                <div class="txt">
+                                    ※ 병원에 처음 오시는 분을 위한 진료 예약 서비스입니다. <br />
+                                    ※ 상담시간 : [평일] 09:00~17:00 / [토요일] 09:00~12:00
+                                </div>
+                                <div class="num">
+                                    <input type="tel" name="number" placeholder="연락처를 ' - ' 없이 작성해주세요.">
+                                    <button>
+                                        예약신청
+                                    </button>
+                                </div>
+                                <div class="agree">
+                                    <input type="checkbox" name="agree" id="agree" value="Y">
+                                    <label for="agree">개인정보 수집 이용에 동의합니다</label>
+                                    <span><a href="">※ 개인정보수집 및 이용안내</a></span>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <ul class="reservation_link">
+                            <li><a href="">회원예약</a></li>
+                            <li><a href="">비회원예약</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="notice">
+                <div class="inner notice">
                     <div class="notice_wrap">
                         <h3>공지사항</h3>
                         <div class="notice_slide">
@@ -359,11 +391,90 @@
             </section>
 
             <!-- 02 mS : 인천세종병원의 진료과 소개 -->
-            <section class="main_sejong sec">
+            <section class="main_doctor sec">
                 <div class="inner content">
                     <div class="title">
-                        <h3>의료진 검색</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                        <h3>인천세종병원의 의료진</h3>
+                        <a href="" class="btn">더보기</a>
+                    </div>
+                    <div class="doctor_right">
+                        <div class="doc_search">
+                            <form action="f" method="get">
+                                <label for="text">의료진 성명 및 전문분야로 검색해주세요.</label>
+                                <input type="text" placeholder="어느 분야의 의료진을 찾으시나요?">
+                                <button>
+                                    <span class="material-symbols-outlined">
+                                        search
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <ul class="doc_title">
+                            <li class="on">진료과</li>
+                            <li>특성화 센터</li>
+                            <li>센터소개</li>
+                        </ul>
+                        <ul class="doc_center">
+                            <li class="on">
+                                <ol class="list">
+                                    <li><a href="">가정의학과</a></li>
+                                    <li><a href="">감염내과</a></li>
+                                    <li><a href="">내분비내과</a></li>
+                                    <li><a href="">류마티스내과</a></li>
+                                    <li><a href="">마취통증의학과</a></li>
+                                    <li><a href="">병리과비뇨의학과</a></li>
+                                    <li><a href="">산부인과</a></li>
+                                    <li><a href="">소아청소년과</a></li>
+                                    <li><a href="">소화기내과</a></li>
+                                    <li><a href="">신경과</a></li>
+                                    <li><a href="">신경외과</a></li>
+                                    <li><a href="">신경외과(척추)</a></li>
+                                    <li><a href="">신장내과</a></li>
+                                    <li><a href="">안과</a></li>
+                                    <li><a href="">심장내과</a></li>
+                                    <li><a href="">심장혈관흉부외과</a></li>
+                                    <li><a href="">영상의학과외과</a></li>
+                                    <li><a href="">응급의학과</a></li>
+                                    <li><a href="">이비인후과</a></li>
+                                    <li><a href="">재활의학과</a></li>
+                                    <li><a href="">정신건강의학과</a></li>
+                                    <li><a href="">정형외과</a></li>
+                                    <li><a href="">중환자의학과</a></li>
+                                    <li><a href="">진단검사의학과</a></li>
+                                    <li><a href="">치과피부과</a></li>
+                                    <li><a href="">호흡기내과</a></li>
+                                    <li><a href="">감염병센터</a></li>
+                                    <li><a href="">뇌혈관센터</a></li>
+                                    <li><a href="">정밀의료센터</a></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="list">
+                                    <li><a href="">심혈관센터</a></li>
+                                    <li><a href="">뇌혈관센터</a></li>
+                                    <li><a href="">소아청소년센터</a></li>
+                                    <li><a href="">소화기센터</a></li>
+                                    <li><a href="">척추관절센터</a></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="list">
+                                    <li><a href="">감염병센터</a></li>
+                                    <li><a href="">국가검진센터</a></li>
+                                    <li><a href="">내시경센터</a></li>
+                                    <li><a href="">무수혈센터</a></li>
+                                    <li><a href="">여성센터</a></li>
+                                    <li><a href="">유방갑상선센터</a></li>
+                                    <li><a href="">응급의료센터</a></li>
+                                    <li><a href="">재활치료센터</a></li>
+                                    <li><a href="">정밀의료센터</a></li>
+                                    <li><a href="">종합검진센터</a></li>
+                                    <li><a href="">척추관절센터</a></li>
+                                    <li><a href="">치매전문센터</a></li>
+                                    <li><a href="">특수검사센터</a></li>
+                                </ol>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -381,27 +492,16 @@
 
             <!-- mM : 인천 세종병원으로 오시는 길 -->
             <section class="main_map sec">
-                <div class="title">
-                    <h3>오시는 길</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <div class="inner content">
+                    <div class="text_box">
+                        <div class="title">
+                            <h3>오시는 길</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="map" id="map">
+                    </div>
                 </div>
-
-                <!-- 1. 지도 노드 -->
-                <div id="daumRoughmapContainer1691399646248" class="root_daum_roughmap root_daum_roughmap_landing">
-                </div>
-
-                <!--	2. 설치 스크립트-->
-                <script charset="UTF-8" class="daum_roughmap_loader_script"
-                    src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-                <!-- 3. 실행 스크립트 -->
-                <script charset="UTF-8">
-                    new daum.roughmap.Lander({
-                        "timestamp": "1691399646248",
-                        "key": "2frut",
-                    }).render();
-                </script>
-
             </section>
         </main>
         <footer class="footer">
