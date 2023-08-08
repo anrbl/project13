@@ -22,15 +22,4 @@ $(function () {
         $('.doc_title li').eq(idx).addClass('on').siblings().removeClass('on');
         $('.doc_center>li').eq(idx).addClass('on').siblings().removeClass();
     });
-
-
-    var mapContainer = $('#map')[0]
-    var mapOption = {
-        center: new kakao.maps.LatLng(37.53257409719912, 126.7367517389714),
-        level: 3,
-    };
-    var map = new kakao.maps.Map(mapContainer, mapOption);
-    $(function () {
-        kakaoMap();
-    })
 });
