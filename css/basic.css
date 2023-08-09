@@ -93,7 +93,7 @@ p {
     display: inline-block;
     font-size: 15px;
     color: var(--main);
-    padding: 8px 24px 7px 24px;
+    padding: 8px 32px 7px 32px;
     border: 1px solid var(--main);
 }
 

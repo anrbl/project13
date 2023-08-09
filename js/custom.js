@@ -1,6 +1,7 @@
 $(function () {
     $('.main_slide').slick({
         arrows: false,
+        fade: true,
     });
 
     $('.notice_slide').slick({
@@ -22,6 +23,10 @@ $(function () {
         $('.doc_title li').eq(idx).addClass('on').siblings().removeClass('on');
         $('.doc_center>li').eq(idx).addClass('on').siblings().removeClass();
     });
+
+    $('.foot_family span').on('click', function () {
+        $('.family_list').toggleClass('on');
+    })
 });
 
 

@@ -119,7 +119,7 @@ main
 }
 
 .main_visual .main_slide .itm01 {
-    background: url(../images/main_visual01.jpg) no-repeat right 40%/cover;
+    background: url(../images/main_visual01.jpg) no-repeat center 20%/cover;
 }
 
 .main_visual .main_slide .itm02 {
@@ -134,40 +134,51 @@ main
     content: "";
     position: absolute;
     inset: 0 0 0 0;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .main_visual .main_slide .itm03::before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .main_visual .main_slide .itm .slogan {
     position: absolute;
-    top: 50%;
-    right: 100px;
-    transform: translate(0, -50%);
+    bottom: 48px;
+    right: 48px;
     text-align: right;
     color: var(--cw);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.main_visual .main_slide .itm01 .slogan {
+    bottom: auto;
+    top: 40px;
+}
+
 .main_visual .main_slide .itm03 .slogan {
+    bottom: 50%;
+    transform: translate(0, 50%);
     right: auto;
-    left: 100px;
+    left: 48px;
     text-align: left;
 }
 
 .main_visual .slogan strong {
     display: block;
-    font-size: 56px;
+    font-size: 72px;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 0 0 6px 0;
 }
 
 .main_visual .slogan p {
     color: var(--cwb);
-    margin: 0 0 24px 0;
+    margin: 0 0 32px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 /* hospital_reservation ----------- */
@@ -574,6 +585,9 @@ main_service
 
 
 .main_service .sejong_smart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 32px;
     background: var(--cw);
     border-radius: 8px;
@@ -581,22 +595,58 @@ main_service
 }
 
 .main_service .sejong_smart h3 {
-    margin: 0;
+    margin: 0 0 32px 0;
 }
 
-.main_service .sejong_smart .desc {
+.main_service .sejong_smart .smart_desc {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    margin: 0 0 56px 0;
 }
 
-.main_service .sejong_smart .desc span {
+.main_service .sejong_smart .smart_desc::after {
+    content: "";
+    position: absolute;
+    bottom: -32px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--cline);
+
+}
+
+.main_service .sejong_smart .smart_desc span {
     display: block;
     text-align: center;
     margin: 0 0 24px 0;
 }
+
+.main_service .sejong_smart .smart_serv h4 {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 0 12px 0;
+}
+
+.main_service .sejong_smart .smart_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.main_service .sejong_smart .smart_list li a {
+    display: block;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 500;
+    background: var(--main);
+    color: var(--cline);
+    border-radius: 4px;
+}
+
 
 .main_service .sejong_newsbox {
     padding: 32px;
@@ -605,23 +655,47 @@ main_service
     border: 1px solid var(--cline);
 }
 
+.main_service .sejong_newsbox h3 {
+    margin: 0 0 18px 0;
+}
+
 .main_service .sejong_newsbox .news_list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.main_service .sejong_newsbox .news_list li {
     position: relative;
 }
 
-
-.main_service .sejong_newsbox .news_list li~li {
-    border-top: 1px solid var(--cline);
+.main_service .sejong_newsbox .news_list li~li::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--cline);
 }
-
 
 .main_service .sejong_newsbox .news_list a {
     position: relative;
-    display: block;
+
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.main_service .sejong_newsbox .news_list p {
+    display: inline-block;
     font-size: 15px;
     line-height: 40px;
 
-    width: 290px;
+    width: 150px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -629,17 +703,25 @@ main_service
 }
 
 
+
 .main_service .sejong_newsbox .news_list a::before {
-    content: "-";
+    content: "\e15b";
+    font-family: "material symbols outlined";
     display: inline-block;
     font-size: 12px;
-
+    margin: 0 8px 0 0;
 }
 
 .main_service .sejong_newsbox .news_list strong {
     font-weight: 700;
     color: var(--sub);
-    margin: 0 4px 0 0;
+    margin: 0 8px 0 0;
+}
+
+.main_service .sejong_newsbox .news_list span {
+    margin: 0 0 0 auto;
+    font-size: 12px;
+    color: var(--c6);
 }
 
 
@@ -667,21 +749,22 @@ main_map
 .main_map .map_left {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
-.main_map .title {
-    margin: 0 0 auto 0;
-}
 
 .main_map .call {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     border: 1px solid var(--cline);
-    margin: 0 0 8px 0;
-    width: 100%;
-    text-align: center
 }
 
 .main_map .call span {
+    display: block;
+    margin: 0 0 8px 0;
     font-size: 14px;
 }
 
@@ -690,7 +773,7 @@ main_map
     font-size: 22px;
     font-weight: 600;
     color: var(--main);
-    margin: 0 0 8px 0;
+    margin: 0 0 16px 0;
 }
 
 
@@ -705,7 +788,7 @@ main_map
 }
 
 .main_map .location li:first-child {
-    margin: 0 0 4px 0;
+    margin: 0 0 8px 0;
 }
 
 .main_map .location a::after {
