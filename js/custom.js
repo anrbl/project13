@@ -31,7 +31,7 @@ $(function () {
 //맵표시
 var mapContainer = document.getElementById('map');
 var mapOptions = {
-    center: new kakao.maps.LatLng(37.53257409719912, 126.7367517389714),
+    center: new kakao.maps.LatLng(37.532574900, 126.736850),
     level: 2,
 };
 var map = new kakao.maps.Map(mapContainer, mapOptions);
