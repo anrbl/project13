@@ -721,7 +721,7 @@ main_map
 }
 
 .main_map .desc {
-    padding: 8px 24px;
+    padding: 16px 24px;
 }
 
 .main_map .desc strong {
@@ -729,6 +729,7 @@ main_map
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 14px 0;
+    padding: 0 16px;
     text-align: center;
 }
 
@@ -739,7 +740,7 @@ main_map
     text-align: center;
     background: var(--main);
     color: var(--cw);
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 
