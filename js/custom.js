@@ -44,7 +44,7 @@ var marker = new kakao.maps.Marker({
 marker.setMap(map);
 
 //마커 위 텍스트 
-var mkOnText = document.querySelector('.main_map #map .desc')
+var mkOnText = document.querySelector('.main_map .desc')
 var mkOnPosition = new kakao.maps.LatLng(37.532574900, 126.736850);
 var infowindow = new kakao.maps.InfoWindow({
     position: mkOnPosition,
