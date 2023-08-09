@@ -510,6 +510,21 @@ main_service
     border: 1px solid var(--cline);
 }
 
+.main_service .sejong_service .serv_list {
+    position: relative;
+    margin: 0 0 40px 0;
+}
+
+.main_service .sejong_service .serv_list::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--cline);
+}
+
 .main_service .sejong_service .serv_list li a {
     position: relative;
     display: flex;
@@ -530,6 +545,32 @@ main_service
     vertical-align: -2px;
     color: var(--main);
 }
+
+
+
+
+
+.main_service .se_employment {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.main_service .se_employment h4 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.main_service .se_employment a {
+    display: block;
+    font-size: 14px;
+    color: var(--main);
+    padding: 8px 22px;
+    border: 1px solid var(--cline);
+}
+
+
 
 
 .main_service .sejong_smart {
@@ -564,36 +605,17 @@ main_service
     border: 1px solid var(--cline);
 }
 
-.main_service .sejong_newsbox h4 {
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.main_service .sejong_newsbox .se_news {
+.main_service .sejong_newsbox .news_list {
     position: relative;
-    margin: 0 0 40px 0;
-}
-
-.main_service .sejong_newsbox .se_news h4 {
-    margin: 0 0 8px 0;
 }
 
 
-.main_service .sejong_newsbox .se_news li~li {
+.main_service .sejong_newsbox .news_list li~li {
     border-top: 1px solid var(--cline);
 }
 
-.main_service .sejong_newsbox .se_news::after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--cline);
-}
 
-.main_service .sejong_newsbox .se_news a {
+.main_service .sejong_newsbox .news_list a {
     position: relative;
     display: block;
     font-size: 15px;
@@ -607,32 +629,17 @@ main_service
 }
 
 
-.main_service .sejong_newsbox .se_news a::before {
+.main_service .sejong_newsbox .news_list a::before {
     content: "-";
     display: inline-block;
     font-size: 12px;
 
 }
 
-.main_service .sejong_newsbox .se_news strong {
+.main_service .sejong_newsbox .news_list strong {
     font-weight: 700;
     color: var(--sub);
     margin: 0 4px 0 0;
-}
-
-.main_service .sejong_newsbox .se_employment {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-}
-
-.main_service .sejong_newsbox .se_employment a {
-    display: block;
-    font-size: 14px;
-    color: var(--main);
-    padding: 8px 22px;
-    border: 1px solid var(--cline);
 }
 
 
@@ -713,6 +720,27 @@ main_map
     border: 1px solid var(--cline);
 }
 
+.main_map .map .desc {
+    padding: 16px;
+    background: var(--cw);
+    border-radius: 8px;
+    outline: 1px solid var(--cline);
+}
+
+.main_map .map .desc strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+}
+
+.main_map .map .desc a {
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px 10px 4px 10px;
+    border: 1px solid var(--main);
+    color: var(--main);
+}
 
 
 /* -----------------------

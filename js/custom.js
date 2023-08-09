@@ -23,3 +23,32 @@ $(function () {
         $('.doc_center>li').eq(idx).addClass('on').siblings().removeClass();
     });
 });
+
+
+
+//main_map :: 카카오 맵 연동 스크립트 (자바)
+
+//맵표시
+var mapContainer = document.getElementById('map');
+var mapOptions = {
+    center: new kakao.maps.LatLng(37.53257409719912, 126.7367517389714),
+    level: 2,
+};
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+//마커표시
+var markerPosition = new kakao.maps.LatLng(37.532574900, 126.736850);
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+marker.setMap(map);
+
+//마커 위 텍스트 
+var mkOnText = document.querySelector('.main_map #map .desc')
+var mkOnPosition = new kakao.maps.LatLng(37.532574900, 126.736850);
+var infowindow = new kakao.maps.InfoWindow({
+    position: mkOnPosition,
+    content: mkOnText
+});
+
+infowindow.open(map, marker); 
