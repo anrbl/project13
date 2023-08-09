@@ -721,10 +721,7 @@ main_map
 }
 
 .main_map .desc {
-    padding: 16px;
-    background: var(--cw);
-    border-radius: 8px;
-    outline: 1px solid var(--cline);
+    padding: 24px;
 }
 
 .main_map .desc strong {
