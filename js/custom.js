@@ -34,7 +34,7 @@ var mapOptions = {
     center: new kakao.maps.LatLng(37.53257409719912, 126.7367517389714),
     level: 2,
 };
-var map = new kakao.maps.Map(mapContainer, mapOption);
+var map = new kakao.maps.Map(mapContainer, mapOptions);
 
 //마커표시
 var markerPosition = new kakao.maps.LatLng(37.532574900, 126.736850);

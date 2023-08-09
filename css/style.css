@@ -720,21 +720,21 @@ main_map
     border: 1px solid var(--cline);
 }
 
-.main_map .map .desc {
+.main_map .desc {
     padding: 16px;
     background: var(--cw);
     border-radius: 8px;
     outline: 1px solid var(--cline);
 }
 
-.main_map .map .desc strong {
+.main_map .desc strong {
     display: block;
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 16px 0;
 }
 
-.main_map .map .desc a {
+.main_map .desc a {
     display: inline-block;
     font-size: 14px;
     padding: 5px 10px 4px 10px;
