@@ -7,6 +7,15 @@ $(function () {
     $('.to_top').on('click', function () {
         $('html,body').animate({ scrollTop: 0 }, 600);
     });
+    $('.head_customer .nav_menu').on('click', function () {
+        $('.gnb').toggleClass('open');
+        $('.head_customer .nav_menu').toggleClass('open');
+    })
+    $('.gnb').on('wheel', function (e) {
+        if ($(this).hasClass('open')) {
+            e.preventDefault();
+        }
+    });
 
     //메인 비주얼 슬라이드 - 페이드 모드 (main>seciton.main_visual>.main_slide)
     $('.main_slide').slick({

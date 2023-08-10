@@ -89,6 +89,21 @@ p {
     clip-path: polygon(0 30%, 30% 30%, 30% 0%, 60% 0%, 60% 30%, 100% 30%, 100% 60%, 60% 60%, 60% 100%, 30% 100%, 30% 60%, 0 60%);
 }
 
+@media (max-width:768px) {
+    .title h3 {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .title h3::before {
+        margin: 4px 0 12px 2px;
+    }
+
+    .title h3::after {
+        top: 4px;
+    }
+}
+
 .btn {
     display: inline-block;
     font-size: 15px;
@@ -114,4 +129,11 @@ p {
     font-family: "material symbols outlined";
     display: inline-block;
     vertical-align: -2px;
+}
+
+@media (max-width:768px) {
+    .btn {
+        padding: 8px 24px 7px 24px;
+        border-radius: 4px;
+    }
 }
