@@ -184,7 +184,7 @@ Header
     position: absolute;
     top: 24px;
     left: calc(100% - 1170px);
-    z-index: 1001;
+    z-index: 1000;
     width: calc(1170px - (100% - 1170px));
     height: 426px;
     display: none;
@@ -1391,7 +1391,7 @@ Footer
 
 
 
-.header .mobile_menu {
+.header .mobile {
     display: none;
 }
 
@@ -1399,16 +1399,14 @@ Footer
 
 
 @media (max-width:768px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+    }
+
     .header {
         height: 80px;
-
-        .gnb {
-            display: none;
-        }
-
-        .head_customer {
-            display: none;
-        }
     }
 
     .header.on {
@@ -1426,13 +1424,15 @@ Footer
 
     .header .head_wrap {
         display: block;
-        height: auto;
+        height: 0;
+        overflow: hidden;
     }
 
     .header h1 {
         position: absolute;
         top: 24px;
         left: 15px;
+        z-index: 1111;
     }
 
     .header h1 img {
@@ -1440,14 +1440,174 @@ Footer
         height: 32px;
     }
 
-    .header .mobile_menu {
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: translate(100%, 0);
+        z-index: 1100;
+        width: 100%;
+        height: 100vh;
+        background: var(--cw);
+        transition: 0.5s;
+
+    }
+
+    .gnb.on {
+        transform: translate(0, 0);
+    }
+
+    .header .gnb>ul {
+        flex-direction: column;
+        margin: 128px 0 0 0;
+    }
+
+    .header .gnb>ul::before,
+    .header .gnb>ul::after,
+    .header .gnb>ul>li .sub>li>a::after {
+        display: none;
+    }
+
+
+    .header .gnb>ul>li>a {
+        font-weight: 300;
+        line-height: 56px;
+        color: var(--cwb);
+        background: var(--main);
+        padding: 0 15px;
+    }
+
+    .header .gnb>ul>li>a:hover {
+        color: var(--cwb);
+    }
+
+    .header .gnb>ul>li~li {
+        border-top: 1px solid var(--sub);
+    }
+
+    .header .gnb>ul>li .sub {
+        position: static;
+        top: 0;
+        height: 100%;
+        padding: 0;
+        line-height: 40px;
+
+        visibility: visible;
+        opacity: 1;
+
+        display: none;
+        transition: 0s;
+    }
+
+    .header .gnb>ul>li:hover .sub {
+        height: 100%;
+    }
+
+    .header .gnb>ul>li .sub>li {
+        width: 100%;
+    }
+
+    .header .gnb>ul>li .sub>li~li>a {
+        border-top: 1px solid var(--cline);
+    }
+
+    .header .gnb>ul>li .sub>li>a {
+        font-size: 15px;
+        font-weight: 700;
+        text-align: left;
+        color: var(--c4);
+        padding: 0 24px;
+    }
+
+
+    .header .gnb>ul>li .sub>li:hover>a {
+        color: var(--sub);
+    }
+
+    .header .gnb>ul>li .sub>li.on>a {
+        color: var(--sub);
+    }
+
+    .header .gnb>ul>li .sub>li .sub_list {
+        position: static;
+        top: 0;
+        width: 100%;
+        height: 120px;
+        border-top: 1px solid var(--cline);
+        background: var(--cwb);
+        display: none;
+        overflow: auto;
+    }
+
+    .header .gnb>ul>li .sub>li:hover .sub_list {
+        display: none;
+    }
+
+
+    .header .gnb>ul>li .sub>li .sub_list>li~li {
+        border-top: 1px solid var(--cline);
+    }
+
+    .header .gnb>ul>li .sub>li .sub_list>li>a {
+        font-size: 14px;
+        line-height: 32px;
+        padding: 0 32px;
+        background: var(--cwb);
+    }
+
+
+    .header .head_customer {
+        position: fixed;
+        top: 100%;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        z-index: 1100;
+
+        display: flex;
+        justify-content: space-evenly;
+        gap: 0;
+
+        width: 100%;
+        height: 48px;
+        transition: 0.5s;
+
+        border-top: 1px solid var(--cline);
+    }
+
+    .header .head_customer.on {
+        left: 0;
+    }
+
+    .header .head_customer li~li {
+        border-left: 1px solid var(--cline);
+    }
+
+    .header .head_customer a {
+        display: block;
+        line-height: 48px;
+        padding: 0 56px;
+        white-space: nowrap;
+    }
+
+    .header .head_customer .nav_menu {
+        display: none;
+    }
+
+    .header .mobile {
         position: fixed;
         top: 30px;
         right: 15px;
+        z-index: 1111;
         display: flex;
         gap: 8px;
         color: var(--main);
+
+        user-select: none;
+        cursor: pointer;
     }
+
 
 
     .main_visual {
@@ -1535,7 +1695,7 @@ Footer
 
     .main_visual .hospital_reservation {
         margin: 0 15px;
-        padding: 30px 24px;
+        padding: 30px 18px 18px 18px;
         border-radius: 4px;
     }
 
@@ -1556,7 +1716,7 @@ Footer
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: 8px;
-        padding: 16px 12px 10px 12px;
+        padding: 16px 14px 14px 14px;
         border-radius: 4px;
         border: 1px solid var(--cline);
     }
@@ -1618,7 +1778,7 @@ Footer
 
 
     .main_doctor .doc_search {
-        padding: 8px;
+        padding: 12px 14px;
         border-radius: 4px;
         border: 1px solid var(--cline);
     }
@@ -1644,6 +1804,11 @@ Footer
 
     .main_doctor .doc_center {
         height: 100%;
+    }
+
+    .main_doctor .doc_center>li:nth-child(2).on,
+    .main_doctor .doc_center>li:nth-child(3).on {
+        background: transparent;
     }
 
     .main_doctor .doc_center>li.on .list {
@@ -1701,13 +1866,15 @@ Footer
     }
 
 
-
+    .quick_menu {
+        background: var(--c4);
+    }
 
     .quick_menu .inner {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding: 0;
-        gap: 2px;
+        gap: 1px;
     }
 
     .quick_menu .inner li:nth-child(1) {
@@ -1722,7 +1889,14 @@ Footer
         display: none;
     }
 
-    .quick_menu .inner li a,
+    .quick_menu .inner li a {
+        display: block;
+        padding: 16px;
+        font-size: 14px;
+        color: var(--cg);
+        background: var(--c3);
+    }
+
     .quick_menu .inner li span {
         display: block;
         padding: 16px;

@@ -11,11 +11,6 @@ $(function () {
         $('.gnb').toggleClass('open');
         $('.head_customer .nav_menu').toggleClass('open');
     })
-    $('.gnb').on('wheel', function (e) {
-        if ($(this).hasClass('open')) {
-            e.preventDefault();
-        }
-    });
 
     //메인 비주얼 슬라이드 - 페이드 모드 (main>seciton.main_visual>.main_slide)
     $('.main_slide').slick({
@@ -53,6 +48,49 @@ $(function () {
     $('.foot_family span').on('click', function () {
         $('.foot_family ul').toggleClass('on');
     })
+
+
+
+    //maxwidth 768px
+    $('.mobile').on('click', function () {
+        $('.gnb').toggleClass('on');
+        $('.head_customer').toggleClass('on');
+    })
+    $('.gnb>ul>li>a').on('click', function (e) {
+        let find = $(this).parent().siblings().find('.sub');
+        if ($('.gnb').hasClass('on')) {
+            e.preventDefault();
+            $(this).next().stop().slideToggle();
+            find.stop().slideUp();
+            $('.sub').toggleClass('on');
+        }
+    })
+    $('.sub>li>a').on('click', function (e) {
+        let pin = $(this).parent().siblings().find('.sub_list').stop().slideUp();
+        if ($('.sub').hasClass('on')) {
+            e.preventDefault();
+            $(this).next().stop().slideToggle();
+            $(this).parent().siblings().find('.sub_list').stop().slideUp();
+            $('.sub>li').addClass('on').siblings().removeClass('on');
+            // $('.sub>li').toggleClass('on');
+        }
+    })
+
+    $(window).on('resize', function () {
+        $('.gnb').removeClass('on')
+    })
+    $('.gnb').on('wheel', function (e) {
+        if ($(this).hasClass('open')) {
+            e.preventDefault();
+        } else if ($(this).hasClass('on')) {
+            e.preventDefault();
+        }
+    });
+    $('.head_customer').on('wheel', function (e) {
+        if ($(this).hasClass('on')) {
+            e.preventDefault();
+        }
+    });
 });
 
 
